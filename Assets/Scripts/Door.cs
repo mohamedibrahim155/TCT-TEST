@@ -9,10 +9,11 @@ public class Door : MonoBehaviour
     public Color closedColor,opendColor;
     Renderer myrend;
 
-    float waitingtime;
+  
     // Start is called before the first frame update
     void Start()
     {
+       
         myrend = GetComponent<Renderer>();
         closedColor = Color.red;
         opendColor = Color.green;
@@ -43,7 +44,7 @@ public class Door : MonoBehaviour
     {
         if (isOpened && !staticObjects) 
         {
-            //Opened door 
+           //opened door
             transform.localPosition = Vector3.Lerp(transform.localPosition, upPosition,0.2f);
             myrend.material.color = opendColor;
            
@@ -56,16 +57,10 @@ public class Door : MonoBehaviour
               transform.localPosition = Vector3.Lerp(transform.localPosition, downPos, 0.2f);
               myrend.material.color = closedColor;
             }
+               // StopCoroutine(waitingtime);
         }
        
  
     }
-    public IEnumerator Waiting(float waitTime)
-    {
-       
-        yield return new WaitForSeconds(waitTime);
-        isWaiting = false;
-        isOpened = false;
-
-    }
+   
 }

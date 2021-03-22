@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public float radius;
     public LayerMask groundLayer;
+    public bool isWaiting;
 
     Ray ray;
     RaycastHit hitInfo;
@@ -45,22 +46,20 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     toggle = !toggle;
+
+
+                    // taking Every opendoor and changing them to close door
                     
-                    // taking Every opendoor and changing them to close door 
-                    foreach (var openDoor in OpenAndCloseList.instance.openDoors)
+                    if (toggle && !isWaiting) 
                     {
-                        openDoor.GetComponent<Door>().isOpened = !toggle;
-                        
-                        
-                    }
-                    // taking Every closed door and changing them to opened door 
-                    foreach (var closeDoor in OpenAndCloseList.instance.closedDoors)
-                    {
-                        closeDoor.GetComponent<Door>().isOpened = toggle;
-                       
-                       
+                        StartCoroutine(Waiting(1));
+                        isWaiting = true;
                     }
 
+                    // taking Every closed door and changing them to opened door 
+
+                    openAllDoors();
+                    closeAllDoors();
 
                 }
            
@@ -95,5 +94,35 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, radius);
 
     }
-   
+
+    void openAllDoors()
+    {
+        foreach (var openDoor in OpenAndCloseList.instance.openDoors)
+        {
+
+            openDoor.GetComponent<Door>().isOpened = !toggle;
+
+
+        }
+    }
+    void closeAllDoors()
+    {
+        foreach (var closeDoor in OpenAndCloseList.instance.closedDoors)
+        {
+            closeDoor.GetComponent<Door>().isOpened = toggle;
+        }
+
+    }
+
+    public IEnumerator Waiting(float waitTime)
+    {
+
+        yield return new WaitForSeconds(waitTime);
+        toggle = !toggle;
+        openAllDoors();
+        closeAllDoors();
+        isWaiting = false;
+        // StopCoroutine(waitingtime);
+
+    }
 }
