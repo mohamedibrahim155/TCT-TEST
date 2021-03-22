@@ -12,16 +12,16 @@ public class Door : MonoBehaviour
     void Start()
     {
         
+           upPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
+            downPos = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
         if (isOpened)
         {
             OpenAndCloseList.instance.openDoors.Add(this.gameObject);
-           upPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
         }
         else
         {
             isClosed = true;
             OpenAndCloseList.instance.closedDoors.Add(this.gameObject);
-            downPos = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         }
     }
 
@@ -32,13 +32,12 @@ public class Door : MonoBehaviour
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, upPosition,0.2f);
         }
-      
-        if (isClosed)
+        else
         {
-            Debug.Log(transform.localPosition);
-
              transform.localPosition = Vector3.Lerp(transform.localPosition, downPos, 0.2f);
+
         }
+      
         
         
         

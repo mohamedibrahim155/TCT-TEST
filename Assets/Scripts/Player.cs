@@ -36,13 +36,13 @@ public class Player : MonoBehaviour
                     foreach (var openDoor in OpenAndCloseList.instance.openDoors)
                     {
                         openDoor.GetComponent<Door>().isOpened = !toggle;
-                        openDoor.GetComponent<Door>().isClosed = toggle;
+                      
 
                     }
                     foreach (var closeDoor in OpenAndCloseList.instance.closedDoors)
                     {
                         closeDoor.GetComponent<Door>().isOpened = toggle;
-                        closeDoor.GetComponent<Door>().isClosed = !toggle;
+                       
                     }
 
 
