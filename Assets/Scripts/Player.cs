@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Player : MonoBehaviour
 {
@@ -15,10 +17,12 @@ public class Player : MonoBehaviour
     Ray ray;
     RaycastHit hitInfo;
     public bool toggle;
+  public  GameObject interactText;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -30,18 +34,30 @@ public class Player : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Door"))
             {
+                // if the object is static UI should not pop up
+                if (!hitInfo.transform.GetComponent<Door>().staticObjects)
+                {
+
+                interactText.SetActive(true);
+                hitInfo.transform.GetComponent<Renderer>().material.color = Color.yellow;       
+                } 
+                
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     toggle = !toggle;
+                    
+                    // taking Every opendoor and changing them to close door 
                     foreach (var openDoor in OpenAndCloseList.instance.openDoors)
                     {
                         openDoor.GetComponent<Door>().isOpened = !toggle;
-                      
-
+                        
+                        
                     }
+                    // taking Every closed door and changing them to opened door 
                     foreach (var closeDoor in OpenAndCloseList.instance.closedDoors)
                     {
                         closeDoor.GetComponent<Door>().isOpened = toggle;
+                       
                        
                     }
 
@@ -49,6 +65,11 @@ public class Player : MonoBehaviour
                 }
            
             }
+            
+        }
+        else
+        {
+            interactText.SetActive(false);
         }
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 3f);
     }

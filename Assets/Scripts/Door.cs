@@ -4,42 +4,68 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-   public bool isOpened,isClosed;
+   public bool isOpened,isClosed,staticObjects,isWaiting;
   public  Vector3 upPosition,downPos;
-    
-   
+    public Color closedColor,opendColor;
+    Renderer myrend;
+
+    float waitingtime;
     // Start is called before the first frame update
     void Start()
     {
-        
-           upPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
-            downPos = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
-        if (isOpened)
+        myrend = GetComponent<Renderer>();
+        closedColor = Color.red;
+        opendColor = Color.green;
+
+   
+        //defining the move position for the swich between up and down
+       upPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
+       downPos = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
+
+        // adding them to the list;
+        if (isOpened && !staticObjects) 
         {
             OpenAndCloseList.instance.openDoors.Add(this.gameObject);
         }
         else
         {
-            isClosed = true;
-            OpenAndCloseList.instance.closedDoors.Add(this.gameObject);
+            if (!staticObjects)
+            {
+              isClosed = true;
+              OpenAndCloseList.instance.closedDoors.Add(this.gameObject);
+
+            }
         }
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
-        if (isOpened)
+        if (isOpened && !staticObjects) 
         {
+            //Opened door 
             transform.localPosition = Vector3.Lerp(transform.localPosition, upPosition,0.2f);
+            myrend.material.color = opendColor;
+           
         }
         else
         {
-             transform.localPosition = Vector3.Lerp(transform.localPosition, downPos, 0.2f);
-
+            //closed door 
+            if (!staticObjects)
+            {
+              transform.localPosition = Vector3.Lerp(transform.localPosition, downPos, 0.2f);
+              myrend.material.color = closedColor;
+            }
         }
-      
-        
-        
-        
+       
+ 
+    }
+    public IEnumerator Waiting(float waitTime)
+    {
+       
+        yield return new WaitForSeconds(waitTime);
+        isWaiting = false;
+        isOpened = false;
+
     }
 }

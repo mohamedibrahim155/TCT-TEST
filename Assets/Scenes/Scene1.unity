@@ -121,6 +121,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &29946427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29946430}
+  - component: {fileID: 29946429}
+  - component: {fileID: 29946428}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &29946428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29946427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &29946429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29946427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &29946430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29946427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &43821878
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,8 +295,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &56390571
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,8 +584,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &198644278
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,8 +674,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &409493378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -936,8 +1011,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &632074739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1253,8 +1331,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &819876399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1470,6 +1551,238 @@ Transform:
   m_Father: {fileID: 9034432541204315414}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1243567256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243567257}
+  - component: {fileID: 1243567259}
+  - component: {fileID: 1243567258}
+  m_Layer: 5
+  m_Name: interactText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1243567257
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243567256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1356334996}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1243567258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243567256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: (E) Interact
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1243567259
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243567256}
+  m_CullTransparentMesh: 0
+--- !u!1 &1356334992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356334996}
+  - component: {fileID: 1356334995}
+  - component: {fileID: 1356334994}
+  - component: {fileID: 1356334993}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1356334993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1356334994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1356334995
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334992}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1356334996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1243567257}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1368669357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,8 +1831,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1368669360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1688,8 +2004,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1512113255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,10 +2115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f321188f8de6c4c9bc4a63c1a5d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpened: 1
+  isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1615130438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +2151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615130438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7, y: 1.81, z: -21.7}
+  m_LocalPosition: {x: -12.83, y: 1.81, z: -20.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 508578833}
@@ -1851,7 +2173,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1615130441
 CapsuleCollider:
@@ -1935,6 +2257,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   toggle: 0
+  interactText: {fileID: 0}
 --- !u!1 &1640675661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +2447,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2174,13 +2497,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786172980}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.36792123, y: -0.008314312, z: 0.20794259, w: 0.9062697}
   m_LocalPosition: {x: 9.32, y: 25.22, z: -16.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30.000002, z: 0}
+  m_LocalEulerAnglesHint: {x: 42.093002, y: 10.713, z: 29.978}
 --- !u!1 &2022918768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,8 +2552,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &2022918771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2465,8 +2791,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &103010677526530566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2636,8 +2965,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 1
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &202866798392548738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2872,8 +3204,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &393826474020022276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,8 +3379,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &416692802745675922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,8 +3484,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &469792203307054854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3338,8 +3679,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &618279858311392434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3645,8 +3989,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &1008680446390557216
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3755,8 +4102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1008680447412486900
 Transform:
   m_ObjectHideFlags: 0
@@ -3936,8 +4286,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1050810463161954796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,8 +4404,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &1079686215909371338
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4357,8 +4713,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1336824897381598538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5448,8 +5807,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &3380589894803440678
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5694,8 +6056,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &3535429614958374654
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5804,8 +6169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &3615279770711363276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6042,8 +6410,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &3771631892357240539
 Transform:
   m_ObjectHideFlags: 0
@@ -6119,8 +6490,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &3815549376381660638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6497,8 +6871,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &4150335416765088782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6580,8 +6957,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &4225686375234855874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6819,8 +7199,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &4247531185161303830
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6997,8 +7380,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4398583186247701438
 GameObject:
   m_ObjectHideFlags: 0
@@ -7231,8 +7617,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &4519263232752639214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7437,10 +7826,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f321188f8de6c4c9bc4a63c1a5d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpened: 0
+  isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4644917994669492430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7564,8 +7956,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &4702160828618247688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7749,8 +8144,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4826772145687527768
 GameObject:
   m_ObjectHideFlags: 0
@@ -7943,8 +8341,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5051159629252021832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8037,8 +8438,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &5051159630374688412
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8227,8 +8631,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5091759678820543452
 GameObject:
   m_ObjectHideFlags: 0
@@ -8376,8 +8783,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &5259846872291648062
 Transform:
   m_ObjectHideFlags: 0
@@ -8675,8 +9085,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 1
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &5338603818066135718
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8746,8 +9159,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &5362958234688075770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9017,8 +9433,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &5592176419591422820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9180,8 +9599,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &5661579406510537618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9455,8 +9877,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &6124577947097290234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9783,8 +10208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6452992627218489442
 GameObject:
   m_ObjectHideFlags: 0
@@ -10379,8 +10807,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &7352344740494833806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10869,8 +11300,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &7962482909579515264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11053,8 +11487,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &8210830302276406548
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11264,8 +11701,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &8264200573850726230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11389,8 +11829,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &8421471849085906478
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11417,7 +11860,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2bedbfa33bc5a844f9b559b54d7dec96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11593,10 +12036,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f321188f8de6c4c9bc4a63c1a5d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpened: 0
+  isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &8496157337042122690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11658,8 +12104,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &8526765416588730438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12008,8 +12457,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8762939342209649038
 Transform:
   m_ObjectHideFlags: 0
@@ -12102,8 +12554,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &8787328332905731496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12319,8 +12774,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &8849168387264689562
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12584,8 +13042,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 1
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &9088617583453287899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12732,8 +13193,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &9141618307624308040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12930,8 +13394,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpened: 0
   isClosed: 0
+  staticObjects: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPos: {x: 0, y: 0, z: 0}
+  closedColor: {r: 0, g: 0, b: 0, a: 0}
+  opendColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &9219840692261294114
 BoxCollider:
   m_ObjectHideFlags: 0
