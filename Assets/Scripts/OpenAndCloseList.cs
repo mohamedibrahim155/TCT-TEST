@@ -19,14 +19,5 @@ public class OpenAndCloseList : MonoBehaviour
             Destroy(this);
         }
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

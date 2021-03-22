@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-   public bool isOpened,isClosed,staticObjects,isWaiting;
-  public  Vector3 upPosition,downPos;
+    public bool isOpened;
+    public bool isClosed;
+    public bool staticObjects;
+    public  Vector3 upPosition,downPos;
     public Color closedColor,opendColor;
     Renderer myrend;
 
