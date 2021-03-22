@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("NextLevel"))
         {
-            if (GameManager.nextLevel>4)
+            if (GameManager.nextLevel>=4)
             {
                 GameManager.nextLevel = 0;
             }
