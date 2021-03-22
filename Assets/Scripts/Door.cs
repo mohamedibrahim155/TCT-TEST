@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     public  Vector3 upPosition,downPos;
     public Color closedColor,opendColor;
     Renderer myrend;
-
+    
   
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class Door : MonoBehaviour
               transform.localPosition = Vector3.Lerp(transform.localPosition, downPos, 0.2f);
               myrend.material.color = closedColor;
             }
-               // StopCoroutine(waitingtime);
+               
         }
        
  

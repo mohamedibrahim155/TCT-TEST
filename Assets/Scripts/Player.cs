@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class Player : MonoBehaviour
@@ -19,6 +21,8 @@ public class Player : MonoBehaviour
     RaycastHit hitInfo;
     public bool toggle;
   public  GameObject interactText;
+    public int currentLevel = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +50,7 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     toggle = !toggle;
-
+                    GameManager.instance.clip.GetComponent<AudioSource>().Play();
 
                     // taking Every opendoor and changing them to close door
                     
@@ -64,6 +68,7 @@ public class Player : MonoBehaviour
                 }
            
             }
+            
             
         }
         else
@@ -124,5 +129,22 @@ public class Player : MonoBehaviour
         isWaiting = false;
         // StopCoroutine(waitingtime);
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("NextLevel"))
+        {
+            if (GameManager.nextLevel>4)
+            {
+                GameManager.nextLevel = 0;
+            }
+            else
+            {
+                GameManager.nextLevel++;
+            }
+            Debug.Log(GameManager.nextLevel);
+            GameManager.instance.SceneLoad(GameManager.nextLevel);
+        }
+       
     }
 }
